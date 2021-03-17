@@ -1,6 +1,19 @@
 @import "_normalize"
 @import "_var"
 
+@keyframes undrln
+    0%
+        width: 0%
+    100%
+        width: 100%
+
+@keyframes border
+    0%
+        border-color: transparent
+
+    100%
+        border-color: $btnPrimaryColor
+
 *
     box-sizing: border-box
 
@@ -69,7 +82,7 @@ a
     margin: auto
 
 .header
-    padding: 56px 0
+    padding: 40px 0
 
     position: absolute
     display: flex
@@ -92,15 +105,40 @@ a
         align-items: center
 
         &__name
+            position: relative
             margin: 0 15px
 
             font-size: 16px
             line-height: 20px
 
+            &::after
+                position: absolute
+                display: block
+
+                height: 1.5px
+
+                top: 130%
+
+                content: ""
+                background: $btnPrimaryColor
+
+            &:hover
+                &::after
+                    animation: undrln 0.3s
+                    width: 100%
+
         &__avatar
-            width: 40px
-            height: 40px
+            width: 42px
+            height: 42px
+
+            padding: 2px
+
             border-radius: 50%
+            border: 2px solid transparent
+
+            &:hover
+                animation: border 0.3s
+                border: 2px solid $btnPrimaryColor
 
 .film
     display: flex
@@ -123,21 +161,25 @@ a
 
         & > *
             margin-right: 15px
+            padding: 1px 0
+
+            border: 1px solid transparent
+            border-radius: 2px
 
             opacity: 0.4
 
         &__age
             border: 1px solid #FFFFFF
             border-radius: 2px
-            opacity: 0.5
 
             padding: 1px 5px
+            opacity: 0.5
 
     &__description
-        max-width: 460px
+        max-width: 470px
         margin-bottom: 36px
 
-        font-size: 18px
+        font-size: 21px
         line-height: 140%
 
     &-options

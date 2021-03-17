@@ -1,14 +1,4 @@
-@font-face {
-  font-family: "Roboto Slab";
-  src: url("../fonts/RobotoSlab-Regular.eot");
-  src: url("../fonts/RobotoSlab-Regular.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/RobotoSlab-Regular.woff2") format("woff2"),
-    url("../fonts/RobotoSlab-Regular.woff") format("woff"),
-    url("../fonts/RobotoSlab-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
 
 $bgColor: #010202;
 $tagsColor: #e5e5e5;
