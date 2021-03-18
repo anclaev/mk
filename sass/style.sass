@@ -74,7 +74,7 @@ a
     min-height: 100vh
 
     background: linear-gradient(90deg, #010202 -2.88%, rgba(1, 2, 2, 0.2) 44.9%),
-    url("../img/app.jpg") no-repeat top right 
+    url("../img/app.jpg") no-repeat center right 
 
 .container
     width: 90%
@@ -148,12 +148,14 @@ a
         margin: auto 0
 
     &__logo
+        width: 400px
         margin-bottom: 18px
 
     &-tags
         display: flex
         flex-direction: row
         align-items: flex-start
+        flex-wrap: wrap
 
         color: $tagsColor
         font-size: 16px
@@ -161,11 +163,13 @@ a
 
         & > *
             margin-right: 15px
+            margin-bottom: 10px
             padding: 1px 0
 
             border: 1px solid transparent
             border-radius: 2px
 
+            text-align: center
             opacity: 0.4
 
         &__age
@@ -184,3 +188,59 @@ a
 
     &-options
         display: flex
+
+@media (max-width: 1200px)
+    .app
+        background-size: 50%
+
+@media (max-width: 768px)
+    .app, .film
+        height: auto
+        min-height: auto
+
+    .app
+        padding-bottom: 75%
+        background-position: bottom center
+
+    .film
+        display: flex
+        justify-content: center
+        padding-top: 120px
+
+        &-wrapper
+            display: flex
+            flex-direction: column
+            align-items: center
+
+            width: 90%
+            max-width: 450px
+
+        &__logo
+            width: 90%
+            max-width: 400px
+
+        &-tags
+            justify-content: center
+
+        &__description
+            font-size: 16px
+            max-width: none
+
+@media (max-width: 576px)
+    .header-user__name, .button-text
+        display: none
+
+    .film-tags
+        font-size: 14px
+
+    .button
+        padding: 9px 22px
+
+    .button--default
+        background: transparent
+
+        &:hover
+            background: $contentColor
+
+    .button-icon path
+        fill: $btnPrimaryColor
