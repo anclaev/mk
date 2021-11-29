@@ -1,0 +1,19 @@
+version: '2'
+services:
+  client:
+    container_name: mk-client
+    image: mk_client:latest
+    restart: always
+    expose:
+      - "3005"
+    environment:
+      VIRTUAL_HOST: mk.anclaev.com
+      VIRTUAL_PORT: 3005
+      CERT_NAME: anclaev.com
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external:
+      name: proxy
